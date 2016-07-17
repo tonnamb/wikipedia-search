@@ -12,13 +12,25 @@ $(document).ready(function () {
   }
 
   function displaySearchResults(searchResults) {
-    console.log(searchResults);
+    $("#results-box").empty();
+    for (var i=0; i<searchResults.query.search.length; i++) {
+      var $div = $("<div>", {"class": "entry"});
+      $div.append('<h4><a href="https://en.wikipedia.org/wiki/'+searchResults.query.search[i].title+'" target="_blank">'+searchResults.query.search[i].title+'</h4>');
+      $div.append('<p>'+searchResults.query.search[i].snippet+' ...</p>');
+      $("#results-box").append($div);
+    }
   }
 
   (function () {
     $("#search").click(function () {
       getSearchResults($('#search-form').val(), displaySearchResults);
     });
+    $("#search-form").keypress(function(event) {
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        $("#search").click();
+      }
+    })
   }());
 
 });

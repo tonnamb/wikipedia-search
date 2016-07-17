@@ -1,0 +1,34 @@
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+h3,
+h4,
+p,
+input {
+  margin: 0;
+}
+
+a {
+  color: black;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.header-wikipedia,
+.form-section,
+.buttons-section,
+.footer-section {
+  text-align: center;
+  padding: 1em 0;
+}
+
+#search-form {
+  width: 95%;
+}
+
+.entry {
+  margin-bottom: 2em;
+}
